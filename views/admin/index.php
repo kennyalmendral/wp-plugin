@@ -1,1 +1,1 @@
-<h2>Welcome to WP Plugin</h2>
+<h1>Welcome to WP Plugin</h1>
