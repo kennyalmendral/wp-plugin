@@ -27,7 +27,7 @@ class WP_Plugin_Admin {
 	}
 
 	function index() {
-		if ( ! current_user_can('manage_options')
+		if ( ! current_user_can('manage_options'))
 			wp_die('You do not have sufficient permissions to access this page.');
 
 		require_once WP_PLUGIN_VIEWS_PATH . 'admin/index.php';
