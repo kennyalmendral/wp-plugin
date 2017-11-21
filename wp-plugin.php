@@ -1,26 +1,16 @@
 <?php
 class WP_Plugin {
-	protected $plugin_slug;
-	protected $version;
-
 	protected $actions;
 	protected $filters;
 	protected $shortcodes;
 
 	public function __construct() {
-		$this->plugin_slug = 'wp_plugin';
-		$this->version = '1.0.0';
-
 		$this->actions = array();
 		$this->filters = array();
 		$this->shortcodes = array();
 
 		$this->load_dependencies();
 		$this->define_hooks();
-	}
-
-	private function get_version() {
-		return $this->version;
 	}
 
 	private function load_dependencies() {
@@ -40,7 +30,7 @@ class WP_Plugin {
 		$public = new WP_Plugin_Public($this->get_version());
 
 		$this->add_action('wp_enqueue_scripts', $public, 'action_enqueue_styles_scripts');
-		$this->add_action('wp_head', $public, 'action_add_ajax_library');
+		$this->add_action('wp_head', $public, 'action_add_ajax_url');
 		$this->add_action('init', $public, 'action_do_output_buffering');
 	}
 
