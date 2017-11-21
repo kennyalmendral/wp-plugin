@@ -7,7 +7,7 @@ class WP_Plugin_Public {
 		wp_enqueue_script('wp-plugin', WP_PLUGIN_ASSETS_URL . 'js/wp-plugin.js', array('jquery'), true, true);
 	}
 
-	public function action_add_ajax_library() {
+	public function action_add_ajax_url() {
 		$html = '<script type="text/javascript">';
 		$html .= 'var ajaxUrl = "' . admin_url('admin-ajax.php') . '"';
 		$html .= '</script>';
@@ -16,7 +16,7 @@ class WP_Plugin_Public {
 	}
 
 	public function action_do_output_buffering() {
-        ob_start();
+        	ob_start();
 	}
 
 	public function show_errors_if_exist() {
